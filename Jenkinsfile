@@ -15,7 +15,7 @@ pipeline {
             var1 = 'nimitha'
           }
           steps {
-            echo '"On Testing branch ${var1}"'
+            echo '"On Testing branch $var1"'
           }
         }
 
