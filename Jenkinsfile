@@ -25,9 +25,20 @@ pipeline {
     }
 
     stage('deploy') {
-      steps {
-        input(message: 'Do you want to deploy?', id: 'Ok')
-        echo 'Deploying to Production'
+      parallel {
+        stage('deploy') {
+          steps {
+            input(message: 'Do you want to deploy?', id: 'Ok')
+            echo 'Deploying to Production'
+          }
+        }
+
+        stage('Artifacts') {
+          steps {
+            archiveArtifacts 'logTestFile.txt'
+          }
+        }
+
       }
     }
 
