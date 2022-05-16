@@ -4,6 +4,10 @@ pipeline {
     stage('build') {
       parallel {
         stage('build') {
+          agent any
+          environment {
+            chromevalue = 'chrome'
+          }
           steps {
             echo 'printing Build Operation'
           }
@@ -12,13 +16,14 @@ pipeline {
         stage('Test') {
           steps {
             echo 'On Testing branch'
+            echo '"get the chrome value ${chromevalue}"'
           }
         }
 
         stage('TestLog') {
-        environment{
-            LocalVariable = "HelloLocal"
-        }
+          environment {
+            LocalVariable = 'HelloLocal'
+          }
           steps {
             writeFile(file: 'logTestFile.txt', text: 'this is an automation file log and local variable created is ')
           }
