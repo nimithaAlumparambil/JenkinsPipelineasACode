@@ -16,7 +16,7 @@ pipeline {
         stage('Test') {
           steps {
             echo 'On Testing branch'
-            echo 'get the chrome value' + environment.chromevalue
+            echo 'get the chrome value' + env.chromevalue
           }
         }
 
