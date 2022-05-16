@@ -4,9 +4,6 @@ pipeline {
     stage('build') {
       parallel {
         stage('build') {
-          environment {
-                      chromevalue = 'chrome'
-                    }
           steps {
             echo 'printing Build Operation'
           }
@@ -15,7 +12,6 @@ pipeline {
         stage('Test') {
           steps {
             echo 'On Testing branch'
-            echo "${"get the chrome value"+ chromevalue}"
           }
         }
 
@@ -48,5 +44,6 @@ pipeline {
 
       }
     }
+
   }
 }
