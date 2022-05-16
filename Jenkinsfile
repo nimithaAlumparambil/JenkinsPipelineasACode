@@ -16,7 +16,7 @@ pipeline {
         stage('Test') {
           steps {
             echo 'On Testing branch'
-            echo 'get the chrome value ' + environment.LocalVariable
+            echo "get the chrome value ${chromevalue}"
           }
         }
 
