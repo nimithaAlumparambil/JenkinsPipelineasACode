@@ -4,10 +4,6 @@ pipeline {
     stage('build') {
       parallel {
         stage('build') {
-          agent any
-          environment {
-            chromevalue = 'chrome'
-          }
           steps {
             echo 'printing Build Operation'
           }
@@ -49,6 +45,8 @@ pipeline {
 
       }
     }
-
+  environment {
+              chromevalue = 'chrome'
+            }
   }
 }
