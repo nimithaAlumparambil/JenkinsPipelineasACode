@@ -20,7 +20,7 @@ pipeline {
             LocalVariable = "HelloLocal"
         }
           steps {
-            writeFile(file: 'logTestFile.txt', text: 'this is an automation file log and local variable created is '${LocalVariable})
+            writeFile(file: 'logTestFile.txt', text: 'this is an automation file log and local variable created is ')
           }
         }
 
